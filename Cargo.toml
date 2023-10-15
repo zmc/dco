@@ -1,12 +1,12 @@
 [package]
 name = "dco"
 description = "A simple tool for adding a DCO Signed-off-by: line to a git commit message"
-version = "0.1.1"
+version = "0.1.2"
 authors = ["Zack Cerza"]
 homepage = "https://github.com/zmc/dco"
 repository = "https://github.com/zmc/dco"
 readme = "README.md"
-license-file = "LICENSE"
+license = "MIT"
 edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
