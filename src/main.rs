@@ -24,16 +24,16 @@ fn main() {
     }
     if !want_dco {
         eprintln!("Encountered errors; outputting message unmodified.");
+    } else {
+        let dco = format!(
+            "{} {} <{}>",
+            signoff,
+            name.as_ref().unwrap().trim(),
+            email.as_ref().unwrap().trim()
+        );
+        let lines = io::stdin().lines();
+        print_commit(signoff, dco, lines);
     }
-    let dco = format!(
-        "{} {} <{}>",
-        signoff,
-        name.as_ref().unwrap().trim(),
-        email.as_ref().unwrap().trim()
-    );
-
-    let lines = io::stdin().lines();
-    print_commit(signoff, dco, lines);
 }
 
 fn print_commit(signoff: &str, dco: String, lines: std::io::Lines<StdinLock>) {
@@ -100,4 +100,6 @@ mod tests {
         let out = cmd("false", vec![]);
         assert!(out.is_err());
     }
+
+    // TODO: use assert_cmd?
 }
