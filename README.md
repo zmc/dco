@@ -47,3 +47,6 @@ formatter = { command = "dco" }
 file-types = ["COMMIT_EDITMSG"]
 roots = [".git"]
 ```
+
+## Usage
+While editing a git commit message, type `:format`
